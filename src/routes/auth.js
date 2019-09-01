@@ -9,4 +9,16 @@ router.get(
 
 router.get('/auth/google/callback', passport.authenticate('google'));
 
+router.get('/auth/logout', (req, res) => {
+	req.logout();
+	res.send(req.user);
+});
+
+router.get('/auth/current-user', (req, res) => {
+	if (req.user) {
+		return res.send(req.user);
+	}
+	res.status(401).send({ error: 'unauthorized' });
+});
+
 module.exports = router;
