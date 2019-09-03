@@ -7,14 +7,20 @@ router.get(
 	passport.authenticate('google', { scope: ['profile', 'email'] })
 );
 
-router.get('/auth/google/callback', passport.authenticate('google'));
+router.get(
+	'/auth/google/callback',
+	passport.authenticate('google'),
+	(req, res) => {
+		res.redirect('/surveys');
+	}
+);
 
-router.get('/auth/logout', (req, res) => {
+router.get('/api/logout', (req, res) => {
 	req.logout();
-	res.send(req.user);
+	res.redirect('/');
 });
 
-router.get('/auth/current-user', (req, res) => {
+router.get('/api/current-user', (req, res) => {
 	if (req.user) {
 		return res.send(req.user);
 	}

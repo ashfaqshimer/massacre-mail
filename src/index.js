@@ -22,8 +22,11 @@ app.use(passport.session());
 
 // Routes
 const authRoutes = require('./routes/auth');
+const billingRoutes = require('./routes/billing');
 
+app.use(express.json()); // Parses the body of requests to json
 app.use(authRoutes);
+app.use(billingRoutes);
 
 // Server configuration
 const PORT = process.env.PORT;
