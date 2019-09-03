@@ -3,9 +3,9 @@ const passport = require('passport');
 const router = new express.Router();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-const auth = require('../middleware/auth');
+const requireAuth = require('../middleware/requireAuth');
 
-router.post('/api/stripe', auth, async (req, res) => {
+router.post('/api/stripe', requireAuth, async (req, res) => {
 	try {
 		const charge = await stripe.charges.create({
 			amount: 500,

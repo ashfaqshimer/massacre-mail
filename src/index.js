@@ -23,10 +23,12 @@ app.use(passport.session());
 // Routes
 const authRoutes = require('./routes/auth');
 const billingRoutes = require('./routes/billing');
+const surveyRoutes = require('./routes/survey');
 
 app.use(express.json()); // Parses the body of requests to json
 app.use(authRoutes);
 app.use(billingRoutes);
+app.use(surveyRoutes);
 
 // Check to see if in production, add a handler to serve up js assets
 if (process.env.ENVIRONMENT === 'prod') {
