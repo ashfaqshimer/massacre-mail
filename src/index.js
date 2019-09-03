@@ -20,6 +20,14 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Routes
+const authRoutes = require('./routes/auth');
+const billingRoutes = require('./routes/billing');
+
+app.use(express.json()); // Parses the body of requests to json
+app.use(authRoutes);
+app.use(billingRoutes);
+
 // Check to see if in production, add a handler to serve up js assets
 if (process.env.ENVIRONMENT === 'prod') {
 	app.use(express.static('client/build'));
@@ -29,14 +37,6 @@ if (process.env.ENVIRONMENT === 'prod') {
 		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 	});
 }
-
-// Routes
-const authRoutes = require('./routes/auth');
-const billingRoutes = require('./routes/billing');
-
-app.use(express.json()); // Parses the body of requests to json
-app.use(authRoutes);
-app.use(billingRoutes);
 
 // Server configuration
 const PORT = process.env.PORT;
