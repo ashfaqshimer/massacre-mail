@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from './actions';
 
@@ -15,24 +15,22 @@ function App(props) {
 	});
 
 	return (
-		<BrowserRouter>
-			<div className='container'>
-				<Header />
-				<Switch>
-					<Route exact path='/' render={() => <Landing />}></Route>
-					<Route
-						exact
-						path='/surveys'
-						render={() => <Dashboard />}
-					></Route>
-					<Route
-						exact
-						path='/surveys/new'
-						render={() => <SurveryNew />}
-					></Route>
-				</Switch>
-			</div>
-		</BrowserRouter>
+		<div className='container'>
+			<Header />
+			<Switch>
+				<Route exact path='/' render={() => <Landing />}></Route>
+				<Route
+					exact
+					path='/surveys'
+					render={() => <Dashboard />}
+				></Route>
+				<Route
+					exact
+					path='/surveys/new'
+					render={() => <SurveryNew />}
+				></Route>
+			</Switch>
+		</div>
 	);
 }
 
