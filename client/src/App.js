@@ -7,7 +7,7 @@ import * as actions from './actions';
 import Header from './components/Header';
 import Landing from './components/Landing';
 import Dashboard from './components/Dashboard';
-import SurveryNew from './components/SurveryNew';
+import SurveryNew from './components/surveys/SurveyNew';
 
 function App(props) {
 	useEffect(() => {
