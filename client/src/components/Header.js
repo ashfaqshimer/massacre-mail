@@ -21,9 +21,7 @@ const Header = props => {
 						<li>
 							<Payments />
 						</li>
-						<li>
-							<a>Credits: {props.auth.credits}</a>
-						</li>
+						<li>Credits: {props.auth.credits}</li>
 						<li>
 							<a href='/api/logout'>Logout</a>
 						</li>
