@@ -11,6 +11,7 @@ router.get('/api/feedback', (req, res) => {
 });
 
 router.post('/api/surveys', requireAuth, requireCredits, async (req, res) => {
+	console.log('Request to surveys');
 	const { title, body, subject, recipients } = req.body;
 
 	const survey = new Survey({

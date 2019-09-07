@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Dashboard = () => {
+const Dashboard = props => {
 	return (
 		<div>
 			<div className='fixed-action-btn'>
 				<Link
 					to='/surveys/new'
-					class='btn-floating btn-large waves-effect waves-light red'
+					className='btn-floating btn-large waves-effect waves-light red'
 				>
-					<i class='material-icons'>add</i>
+					<i className='material-icons'>add</i>
 				</Link>
 			</div>
 		</div>
