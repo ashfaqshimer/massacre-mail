@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Payments from './Payments';
+import './Header.css';
 
 const Header = props => {
 	const renderContent = () => {
@@ -30,7 +31,7 @@ const Header = props => {
 		}
 	};
 	return (
-		<div>
+		<div className='Header'>
 			<nav>
 				<div className='nav-wrapper'>
 					<Link
@@ -39,11 +40,15 @@ const Header = props => {
 					>
 						Massacre Mail
 					</Link>
+
 					<ul id='nav-mobile' className='right hide-on-med-and-down'>
 						{renderContent()}
 					</ul>
 				</div>
 			</nav>
+			<div class='nav-content'>
+				<ul class='tabs '>{renderContent()}</ul>
+			</div>
 		</div>
 	);
 };

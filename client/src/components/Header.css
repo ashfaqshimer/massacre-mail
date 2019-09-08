@@ -1,0 +1,13 @@
+.nav-content {
+	display: none;
+}
+@media (max-width: 762px) {
+	.nav-content {
+		display: block;
+	}
+	.nav-content ul {
+		margin-top: 5px;
+		display: flex;
+		justify-content: space-between;
+	}
+}
