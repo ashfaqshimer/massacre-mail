@@ -12,7 +12,7 @@ import SurveryNew from './components/surveys/SurveyNew';
 function App(props) {
 	useEffect(() => {
 		props.fetchUser();
-	});
+	}, []);
 
 	return (
 		<div className='container'>

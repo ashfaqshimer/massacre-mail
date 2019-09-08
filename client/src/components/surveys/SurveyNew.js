@@ -6,7 +6,6 @@ import { reduxForm } from 'redux-form';
 const SurveyNew = () => {
 	const [showFormReview, setshowFormReview] = useState(false);
 	const toggleForm = () => {
-		console.log('toggled');
 		setshowFormReview(!showFormReview);
 	};
 
